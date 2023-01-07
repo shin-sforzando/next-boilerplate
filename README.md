@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next-boilerplate
 
-## Getting Started
+<!-- Badges -->
 
-First, run the development server:
+[![Last Commit](https://img.shields.io/github/last-commit/shin-sforzando/next-boilerplate)](https://github.com/shin-sforzando/next-boilerplate/graphs/commit-activity)
+[![CI](https://github.com/shin-sforzando/next-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/shin-sforzando/next-boilerplate/actions/workflows/ci.yml)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-```bash
-npm run dev
-# or
-yarn dev
+<!-- Screenshots -->
+
+| ![Screenshot 1](https://placehold.jp/32/3d4070/ffffff/720x480.png?text=Screenshot%201) | ![Screenshot 2](https://placehold.jp/32/703d40/ffffff/720x480.png?text=Screenshot%202) |
+| :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
+|                                      Screenshot 1                                      |                                      Screenshot 2                                      |
+
+<!-- Synopsis -->
+
+**next-boilerplate** is a template repository for Next.js.
+
+## _Use this template_
+
+- [ ] Replace the string `shin-sforzando` with the actual project owner
+- [ ] Replace the string `next-boilerplate` with the actual project name
+- [ ] Create an issue `#1` for screenshots
+- [ ] `npm install` to install dependencies
+- [ ] Check the [repository secrets](https://github.com/shin-sforzando/next-boilerplate/settings/secrets/actions)
+  - [ ] Set `xxxx` for xxxx
+- [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
+- [ ] **Delete this section!**
+
+<!-- TOC -->
+
+- [_Use this template_](#use-this-template)
+- [Prerequisites](#prerequisites)
+- [How to](#how-to)
+  - [Develop](#develop)
+  - [Launch Dev Server](#launch-dev-server)
+  - [Lint](#lint)
+  - [Format](#format)
+  - [Build](#build)
+  - [Deploy](#deploy)
+- [Misc](#misc)
+- [Notes](#notes)
+  - [LICENSE](#license)
+  - [Contributors](#contributors)
+
+## Prerequisites
+
+- [Node.js] (Version 18 LTS or higher)
+  - [Next.js] (Version 13 or higher)
+  - [Rome] as _Script Linter and Formatter_
+- [git-secret](https://git-secret.io/) as _Secret File Manager_
+- [direnv](https://direnv.net) as _`.env` Loader_
+
+## How to
+
+```shell
+$ npm run
+Lifecycle scripts included in next-boilerplate@0.0.0:
+  start
+    next start
+
+available via `npm run-script`:
+  reinstall
+    node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})' && npm install
+  dev
+    next dev
+  build
+    next build
+  lint
+    rome check --apply .
+  format
+    rome format --write .
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Develop
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+`npm install` to install dependencies.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Launch Dev Server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`npm run dev` to launch development server.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Lint
 
-## Learn More
+`npm run lint` to lint all scripts.
 
-To learn more about Next.js, take a look at the following resources:
+### Format
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run format` to format all scripts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Build
 
-## Deploy on Vercel
+(T. B. D.)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If it is linked to [Vercel](https://vercel.com/), it will be deployed automatically with each Push.
+
+## Misc
+
+## Notes
+
+This repository is [Commitizen](https://commitizen.github.io/cz-cli/) friendly, following [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+
+### LICENSE
+
+See [LICENSE](LICENSE).
+
+### Contributors
+
+- [sforzando LLC. and Inc.](https://sforzando.co.jp/)
+  - [Shin'ichiro Suzuki](https://github.com/shin-sforzando)
