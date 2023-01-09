@@ -8,5 +8,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
   },
-  "cSpell.words": ["direnv"]
+  "cSpell.words": [
+    "direnv"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

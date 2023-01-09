@@ -35,7 +35,7 @@ Steps to check the behavior:
 
 1. Update Dependencies `npm install`
 1. Start Dev Server `npm run dev`
-1. Reload Pages `http://localhost:5173/`
+1. Reload Pages `http://localhost:3000/`
 1. Check on `...`
 
 ## Appendix
