@@ -46,9 +46,10 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (Version 18 LTS or higher)
-  - [Next.js](https://nextjs.org) (Version 13 or higher)
-  - [Rome](https://rome.tools) as _Script Linter and Formatter_
+- [Volta](https://volta.sh) as _JS Tool Manager_
+  - [Node.js](https://nodejs.org/) (Version 18 LTS or higher)
+    - [Next.js](https://nextjs.org) (Version 13 or higher)
+    - [Rome](https://rome.tools) as _Script Linter and Formatter_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
 - [direnv](https://direnv.net) as _`.env` Loader_
 

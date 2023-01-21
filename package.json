@@ -17,6 +17,10 @@
       "rome format --write"
     ]
   },
+  "volta": {
+    "node": "18.13.0",
+    "npm": "9.3.1"
+  },
   "dependencies": {
     "@next/font": "13.1.1",
     "next": "13.1.1",
