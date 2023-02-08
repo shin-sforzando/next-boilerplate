@@ -28,9 +28,16 @@
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
+## ToDo
+
+- [ ] Stylelint
+- [ ] Mantine
+- [ ] Storybook
+
 <!-- TOC -->
 
 - [_Use this template_](#use-this-template)
+- [ToDo](#todo)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Develop](#develop)
