@@ -1,29 +1,23 @@
 ---
 name: Bug Report (不具合報告)
 about: Create a report to help us improve
-title: 'fix: '
-labels: 'bug'
-assignees: ''
+title: "fix: :bug: "
+labels: "bug"
+assignees: ""
 
 ---
 
 ## Screenshots
 
-(T. B. D.)
-
-If applicable, add screenshots to help explain your problem.
+(T. B. D.; If applicable, add screenshots to help explain your problem.)
 
 ## Describe the bug
 
-(T. B. D.)
-
-A clear and concise description of what the bug is.
+(T. B. D.; A clear and concise description of what the bug is.)
 
 ## Expected behavior
 
-(T. B. D.)
-
-A clear and concise description of what you expected to happen.
+(T. B. D.; A clear and concise description of what you expected to happen.)
 
 ## To reproduce
 
@@ -44,13 +38,10 @@ Steps to reproduce the behavior:
 
 ### Smartphone (please complete the following information)
 
-- Device: [ex. iPhone6]
-- OS: [ex. iOS8.1]
-- Browser: [ex. stock browser, safari]
-- Version: [ex. 22]
+- Device: [ex. iPhone 6]
+- OS: [ex. iOS 8.1]
+- Browser: [ex. chrome, safari]
 
 ## Appendix
 
-(T. B. D.)
-
-Add any other context about the problem here.
+(T. B. D.; Add any other context about the problem here.)
