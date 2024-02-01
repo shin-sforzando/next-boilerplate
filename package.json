@@ -8,12 +8,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "biome check --apply .",
+    "check": "biome check --verbose --apply .",
     "lint": "biome lint --apply .",
     "format": "biome format --write ."
   },
   "lint-staged": {
-    "*.{json,js,jsx,ts,tsx}": [
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --apply"
     ]
   },

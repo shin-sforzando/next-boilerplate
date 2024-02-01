@@ -30,10 +30,10 @@
 
 ## ToDo
 
-- [ ] Rome -> Biome
-- [ ] `globals.css`
+- [x] Rome -> Biome
 - [ ] Stylelint
 - [ ] Mantine
+- [ ] `globals.css`
 - [ ] Storybook
 - [ ] git-cliff
 

@@ -1,5 +1,5 @@
 const EnvIndicator = () => {
-	return <>{process.env.NODE_ENV}</>;
-};
+  return <>{process.env.NODE_ENV}</>
+}
 
-export default EnvIndicator;
+export default EnvIndicator
