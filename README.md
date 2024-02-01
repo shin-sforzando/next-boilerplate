@@ -31,9 +31,11 @@
 ## ToDo
 
 - [ ] Rome -> Biome
+- [ ] `globals.css`
 - [ ] Stylelint
 - [ ] Mantine
 - [ ] Storybook
+- [ ] git-cliff
 
 <!-- TOC -->
 
