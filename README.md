@@ -58,10 +58,11 @@
 
 - [Volta](https://volta.sh) as _JS Tool Manager_
   - [Node.js](https://nodejs.org/) (Version 20.11.0 LTS or higher)
-    - [Next.js](https://nextjs.org) (Version 14 or higher)
-    - [Rome](https://rome.tools) as _Script Linter and Formatter_
+    - [Next.js](https://nextjs.org/) (Version 14 or higher)
+    - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
+- [git-cliff](https://git-cliff.org) as _CHANGELOG generator_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
-- [direnv](https://direnv.net) as _`.env` Loader_
+- [direnv](https://direnv.net/) as _`.env` Loader_
 
 ## How to
 
@@ -72,6 +73,8 @@ Lifecycle scripts included in next-boilerplate@0.0.0:
     next start
 
 available via `npm run-script`:
+  prepare
+    husky install
   reinstall
     node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})' && npm install
   dev
@@ -79,9 +82,9 @@ available via `npm run-script`:
   build
     next build
   lint
-    rome check --apply .
+    biome lint .
   format
-    rome format --write .
+    biome format --write .
 ```
 
 ### Develop

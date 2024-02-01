@@ -1,7 +1,10 @@
 {
-  "recommendations": [
-    "editorconfig.editorconfig",
-    "wayou.vscode-todo-highlight",
-    "yzhang.markdown-all-in-one"
-  ]
+	"recommendations": [
+		"biomejs.biome",
+		"editorconfig.editorconfig",
+		"streetsidesoftware.code-spell-checker",
+		"wayou.vscode-todo-highlight",
+		"wix.vscode-import-cost",
+		"yzhang.markdown-all-in-one"
+	]
 }
