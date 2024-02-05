@@ -33,9 +33,10 @@
 - [x] Rome -> Biome
 - [x] Stylelint
 - [ ] CSS Framework
-- [ ] `globals.css`
+  - [ ] `globals.css`
 - [ ] Storybook
 - [x] git-cliff
+- [ ] Markuplint
 
 <!-- TOC -->
 
