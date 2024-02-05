@@ -1,4 +1,5 @@
 import EnvIndicator from "@/app/components/EnvIndicator"
+import { Card, CardBody, CardHeader } from "@chakra-ui/react"
 
 const getDummyUsers = async () => {
   const res = await fetch("https://dummyjson.com/users")
@@ -10,9 +11,10 @@ const Page = async () => {
   const dummyUsers = await getDummyUsers()
   return (
     <>
-      <h1>app/page.tsx</h1>
-      <h2>Dummy Users</h2>
-      <pre>{JSON.stringify(dummyUsers, null, 2)}</pre>
+      <Card align="center">
+        <CardHeader>Dummy Users</CardHeader>
+        <CardBody>{JSON.stringify(dummyUsers, null, 2)}</CardBody>
+      </Card>
       <EnvIndicator />
     </>
   )
