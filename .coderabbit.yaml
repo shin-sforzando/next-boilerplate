@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/coderabbit-overrides.v2.json
+language: "jp"
+early_access: true
+reviews:
+  high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  path_filters:
+    - "!**/.github/**"
+    - "!**/.vscode/**"
+  path_instructions:
+    - path: "README.md"
+      instructions: "Review the document for adequacy as an overview of this system."
+  auto_review:
+    enabled: true
+    ignore_title_keywords:
+      - "wip"
+      - "wontfix"
+    drafts: true
+chat:
+  auto_reply: true
