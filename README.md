@@ -32,11 +32,12 @@
 
 - [x] Rome -> Biome
 - [x] Stylelint
-- [ ] CSS Framework
-  - [ ] `globals.css`
+- [x] CSS Framework
+  - [x] `globals.css`
 - [ ] Storybook
 - [x] git-cliff
 - [x] Markuplint
+- [x] Secretlint
 
 <!-- TOC -->
 
@@ -95,10 +96,14 @@ available via `npm run-script`:
     biome lint --apply .
   format:script
     biome format --write .
+  lint:markup
+    markuplint 'src/**/*.{html,tsx}'
   check:style
     run-s lint:style
   lint:style
     stylelint --fix 'src/**/*.{css,scss,less}'
+  lint:secret
+    secretlint --maskSecrets --secretlintignore .gitignore '**/*'
 ```
 
 ### Prepare for Development
