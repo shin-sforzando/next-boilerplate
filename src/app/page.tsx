@@ -16,7 +16,7 @@ const Page = async () => {
         <CardBody>{JSON.stringify(dummyUsers, null, 2)}</CardBody>
       </Card>
       <EnvIndicator />
-    </#jsx-fragment>
+    </>
   )
 }
 
