@@ -31,11 +31,15 @@
 ## ToDo
 
 - [x] Rome -> Biome
-- [ ] Stylelint
-- [ ] Mantine
-- [ ] `globals.css`
+- [x] Stylelint
+- [x] CSS Framework
+  - [x] `globals.css`
 - [ ] Storybook
-- [ ] git-cliff
+- [x] git-cliff
+- [x] Markuplint
+- [x] Secretlint
+- [ ] Unit Test
+- [ ] E2E Test
 
 <!-- TOC -->
 
@@ -43,12 +47,14 @@
 - [ToDo](#todo)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
-  - [Develop](#develop)
+  - [Prepare for Development](#prepare-for-development)
   - [Launch Dev Server](#launch-dev-server)
   - [Lint](#lint)
   - [Format](#format)
   - [Build](#build)
   - [Deploy](#deploy)
+  - [Documenting](#documenting)
+    - [CHANGELOG](#changelog)
 - [Misc](#misc)
 - [Notes](#notes)
   - [LICENSE](#license)
@@ -60,7 +66,6 @@
   - [Node.js](https://nodejs.org/) (Version 20.11.0 LTS or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
-- [git-cliff](https://git-cliff.org) as _CHANGELOG generator_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
 - [direnv](https://direnv.net/) as _`.env` Loader_
 
@@ -81,13 +86,29 @@ available via `npm run-script`:
     next dev
   build
     next build
+  check
+    run-p check:*
   lint
-    biome lint .
+    run-p lint:*
   format
+    run-p format:*
+  check:script
+    run-s lint:script format:script
+  lint:script
+    biome lint --apply .
+  format:script
     biome format --write .
+  lint:markup
+    markuplint 'src/**/*.{html,tsx}'
+  check:style
+    run-s lint:style
+  lint:style
+    stylelint --fix 'src/**/*.{css,scss,less}'
+  lint:secret
+    secretlint --maskSecrets --secretlintignore .gitignore '**/*'
 ```
 
-### Develop
+### Prepare for Development
 
 `npm install` to install dependencies.
 
@@ -97,19 +118,33 @@ available via `npm run-script`:
 
 ### Lint
 
-`npm run lint` to lint all scripts.
+`npm run lint` to lint all.
 
 ### Format
 
-`npm run format` to format all scripts.
+`npm run format` to format all.
 
 ### Build
 
-(T. B. D.)
+`npm run build` to create optimized production build.
 
 ### Deploy
 
 If it is linked to [Vercel](https://vercel.com/), it will be deployed automatically with each Push.
+
+### Documenting
+
+#### CHANGELOG
+
+```shell
+npx git-cliff --tag $(VERSION) --output CHANGELOG.md
+git add CHANGELOG.md && git commit -m "docs: :notebook: update CHANGELOG.md"
+git tag $(VERSION)
+git push origin --tags
+```
+
+> [!NOTE]
+> `$(VERSION)` must be in accordance with [semver](https://semver.org) like `vX.Y.Z`.
 
 ## Misc
 

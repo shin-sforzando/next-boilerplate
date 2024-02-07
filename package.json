@@ -8,13 +8,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "biome check --verbose --apply .",
-    "lint": "biome lint --apply .",
-    "format": "biome format --write ."
+    "check": "run-p check:*",
+    "lint": "run-p lint:*",
+    "format": "run-p format:*",
+    "check:script": "run-s lint:script format:script",
+    "lint:script": "biome lint --apply .",
+    "format:script": "biome format --write .",
+    "lint:markup": "markuplint 'src/**/*.{html,tsx}'",
+    "check:style": "run-s lint:style",
+    "lint:style": "stylelint --fix 'src/**/*.{css,scss,less}'",
+    "lint:secret": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'"
   },
   "lint-staged": {
+    "*.{html,tsx}": [
+      "markuplint"
+    ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --apply"
+    ],
+    "*.{css,scss,less}": [
+      "stylelint --fix"
     ]
   },
   "volta": {
@@ -22,17 +35,31 @@
     "npm": "10.2.4"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^11.0.3",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
+    "@markuplint/jsx-parser": "^4.0.2",
+    "@markuplint/react-spec": "^4.0.0",
+    "@secretlint/secretlint-rule-preset-recommend": "^8.1.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "husky": "^9.0.7",
-    "lint-staged": "^15.2.1",
+    "git-cliff": "^1.4.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "markuplint": "^4.0.2",
+    "npm-run-all2": "^6.1.2",
+    "secretlint": "^8.1.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "^5"
   }
 }

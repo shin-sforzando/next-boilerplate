@@ -3,10 +3,18 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "quickfix.biome": true,
-    "source.organizeImports.biome": true
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
-  "cSpell.words": ["biomejs", "direnv", "Mantine", "Stylelint"],
+  "markuplint.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "biomejs",
+    "chakra",
+    "direnv",
+    "Mantine",
+    "markuplint",
+    "Stylelint"
+  ]
 }
