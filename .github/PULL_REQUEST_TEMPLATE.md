@@ -2,7 +2,7 @@
 
 To close #999
 
-The relevant Issue must be specified.
+The relevant Issue **MUST** be specified.
 Then explain **why** you implemented it this way for that.
 
 ## Screenshots

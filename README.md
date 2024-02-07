@@ -38,6 +38,8 @@
 - [x] git-cliff
 - [x] Markuplint
 - [x] Secretlint
+- [ ] Unit Test
+- [ ] E2E Test
 
 <!-- TOC -->
 

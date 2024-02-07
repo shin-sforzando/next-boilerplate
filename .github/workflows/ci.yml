@@ -26,3 +26,5 @@ jobs:
         run: biome ci .
       - name: Install Dependencies
         run: npm ci
+      - name: Build
+        run: npm run build
