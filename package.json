@@ -17,7 +17,9 @@
     "lint:markup": "markuplint 'src/**/*.{html,tsx}'",
     "check:style": "run-s lint:style",
     "lint:style": "stylelint --fix 'src/**/*.{css,scss,less}'",
-    "lint:secret": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'"
+    "lint:secret": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
     "*.{html,tsx}": [
@@ -49,6 +51,14 @@
     "@markuplint/jsx-parser": "^4.0.2",
     "@markuplint/react-spec": "^4.0.0",
     "@secretlint/secretlint-rule-preset-recommend": "^8.1.1",
+    "@storybook/addon-essentials": "^7.6.13",
+    "@storybook/addon-interactions": "^7.6.13",
+    "@storybook/addon-links": "^7.6.13",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.13",
+    "@storybook/nextjs": "^7.6.13",
+    "@storybook/react": "^7.6.13",
+    "@storybook/test": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -58,6 +68,7 @@
     "markuplint": "^4.0.2",
     "npm-run-all2": "^6.1.2",
     "secretlint": "^8.1.1",
+    "storybook": "^7.6.13",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5"

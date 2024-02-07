@@ -10,11 +10,13 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "autodocs",
     "biomejs",
     "chakra",
     "direnv",
     "Mantine",
     "markuplint",
+    "nextjs",
     "Stylelint"
   ]
 }
