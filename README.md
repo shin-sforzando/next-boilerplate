@@ -36,7 +36,7 @@
   - [ ] `globals.css`
 - [ ] Storybook
 - [x] git-cliff
-- [ ] Markuplint
+- [x] Markuplint
 
 <!-- TOC -->
 

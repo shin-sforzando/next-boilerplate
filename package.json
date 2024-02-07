@@ -14,10 +14,14 @@
     "check:script": "run-s lint:script format:script",
     "lint:script": "biome lint --apply .",
     "format:script": "biome format --write .",
+    "lint:markup": "markuplint 'src/**/*.{html,tsx}'",
     "check:style": "run-s lint:style",
     "lint:style": "stylelint --fix 'src/**/*.{css,scss,less}'"
   },
   "lint-staged": {
+    "*.{html,tsx}": [
+      "markuplint --fix"
+    ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --apply"
     ],
@@ -41,12 +45,15 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
+    "@markuplint/jsx-parser": "^4.0.2",
+    "@markuplint/react-spec": "^4.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "git-cliff": "^1.4.0",
     "husky": "^9.0.7",
     "lint-staged": "^15.2.1",
+    "markuplint": "^4.0.2",
     "npm-run-all2": "^6.1.2",
     "stylelint": "^16.2.0",
     "stylelint-config-standard": "^36.0.0",

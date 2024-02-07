@@ -6,7 +6,15 @@
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
-  "cSpell.words": ["biomejs", "chakra", "direnv", "Mantine", "Stylelint"],
+  "markuplint.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.words": [
+    "biomejs",
+    "chakra",
+    "direnv",
+    "Mantine",
+    "markuplint",
+    "Stylelint"
+  ]
 }
