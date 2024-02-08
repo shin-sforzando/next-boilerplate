@@ -35,6 +35,7 @@
 - [x] CSS Framework
   - [x] `globals.css`
 - [ ] Storybook
+  - [ ] Chromatic
 - [x] git-cliff
 - [x] Markuplint
 - [x] Secretlint
@@ -48,7 +49,9 @@
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
+    - [Secret Files](#secret-files)
   - [Launch Dev Server](#launch-dev-server)
+  - [Launch Storybook](#launch-storybook)
   - [Lint](#lint)
   - [Format](#format)
   - [Build](#build)
@@ -80,6 +83,10 @@ Lifecycle scripts included in next-boilerplate@0.0.0:
 available via `npm run-script`:
   prepare
     husky install
+  secret:hide
+    git secret hide -mvF
+  secret:reveal
+    git secret reveal -vf
   reinstall
     node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})' && npm install
   dev
@@ -106,15 +113,31 @@ available via `npm run-script`:
     stylelint --fix 'src/**/*.{css,scss,less}'
   lint:secret
     secretlint --maskSecrets --secretlintignore .gitignore '**/*'
+  storybook
+    storybook dev -p 6006
+  build-storybook
+    storybook build
+  chromatic
+    npx chromatic
 ```
 
 ### Prepare for Development
 
 `npm install` to install dependencies.
 
+#### Secret Files
+
+`npm run secret:hide` to hide all secret files.
+
+`npm run secret:reveal` to reveal all secret files.
+
 ### Launch Dev Server
 
-`npm run dev` to launch development server.
+`npm run dev` to launch development server on `http://0.0.0.0:3000/`.
+
+### Launch Storybook
+
+`npm run storybook` to launch Storybook on `http://0.0.0.0:6006/`.
 
 ### Lint
 
