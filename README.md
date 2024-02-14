@@ -73,6 +73,7 @@
   - [Node.js](https://nodejs.org/) (Version 20.11.0 LTS or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
+    - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
 - [direnv](https://direnv.net/) as _`.env` Loader_
 
@@ -88,7 +89,7 @@ Lifecycle scripts included in next-boilerplate@0.0.0:
 
 available via `npm run-script`:
   prepare
-    husky install && npx playwright install
+    husky
   secret:hide
     git secret hide -mvF
   secret:reveal
@@ -98,8 +99,6 @@ available via `npm run-script`:
   dev
     next dev
   build
-    run-s build:*
-  build:next
     next build
   check
     run-p check:*
@@ -123,7 +122,7 @@ available via `npm run-script`:
     secretlint --maskSecrets --secretlintignore .gitignore '**/*'
   storybook
     storybook dev -p 6006
-  build:storybook
+  build-storybook
     storybook build
   test:storybook
     test-storybook
@@ -163,7 +162,7 @@ available via `npm run-script`:
 
 ### Build
 
-`npm run build` to build all in sequence.
+`npm run build` to create optimized production build.
 
 ### Deploy
 

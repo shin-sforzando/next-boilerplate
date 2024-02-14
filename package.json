@@ -8,8 +8,7 @@
     "secret:reveal": "git secret reveal -vf",
     "reinstall": "node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})' && npm install",
     "dev": "next dev",
-    "build": "run-s build:*",
-    "build:next": "next build",
+    "build": "next build",
     "start": "next start",
     "check": "run-p check:*",
     "lint": "run-p lint:*",
@@ -22,7 +21,7 @@
     "lint:style": "stylelint --fix 'src/**/*.{css,scss,less}'",
     "lint:secret": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
     "storybook": "storybook dev -p 6006",
-    "build:storybook": "storybook build",
+    "build-storybook": "storybook build",
     "test": "run-p test:*",
     "test:storybook": "test-storybook",
     "chromatic": "npx chromatic"
