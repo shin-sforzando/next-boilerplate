@@ -24,7 +24,7 @@
 - [ ] Create an issue `#1` for screenshots
 - [ ] `npm install` to install dependencies
 - [ ] Check the [repository secrets](https://github.com/shin-sforzando/next-boilerplate/settings/secrets/actions)
-  - [ ] Set `xxxx` for xxxx
+  - [ ] Set `CHROMATIC_PROJECT_TOKEN` for Chromatic
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
