@@ -1,22 +1,24 @@
 .ribbon {
   width: 200px;
   background-color: #666;
-  position: absolute;
+  position: fixed;
   top: 25px;
   text-align: center;
   line-height: 50px;
   letter-spacing: 1px;
   color: #fff;
   box-shadow: 0 0 5px rgba(0 0 0 / 30%);
+  overflow: hidden;
+  z-index: 2147483647;
 }
 
 /* Position Variants */
-.ribbon.left {
+.ribbon.top-left {
   left: -50px;
   transform: rotate(-45deg);
 }
 
-.ribbon.right {
+.ribbon.top-right {
   right: -50px;
   left: auto;
   transform: rotate(45deg);

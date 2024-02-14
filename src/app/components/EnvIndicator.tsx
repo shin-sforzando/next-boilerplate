@@ -1,10 +1,10 @@
-import Ribbon from "./Ribbon.module.css"
+import CornerRibbon from "./CornerRibbon.module.css"
 
 const EnvIndicator = () => {
   return (
     <>
       {process.env.NODE_ENV !== "production" && (
-        <div className={`${Ribbon.ribbon} ${Ribbon.right}`}>
+        <div className={`${CornerRibbon.ribbon} ${CornerRibbon["top-right"]}`}>
           {process.env.NODE_ENV}
         </div>
       )}

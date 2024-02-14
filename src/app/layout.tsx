@@ -1,3 +1,4 @@
+import EnvIndicator from "@/app/components/EnvIndicator"
 import { Providers } from "@/app/providers"
 import { Metadata } from "next"
 
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>{children}</Providers>
+        <EnvIndicator />
       </body>
     </html>
   )
