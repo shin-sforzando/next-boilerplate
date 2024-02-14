@@ -54,6 +54,7 @@
     "@markuplint/jsx-parser": "^4.1.0",
     "@markuplint/react-spec": "^4.0.1",
     "@secretlint/secretlint-rule-preset-recommend": "^8.1.1",
+    "@storybook/addon-a11y": "^7.6.15",
     "@storybook/addon-essentials": "^7.6.15",
     "@storybook/addon-interactions": "^7.6.15",
     "@storybook/addon-links": "^7.6.15",

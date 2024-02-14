@@ -6,7 +6,7 @@
   text-align: center;
   line-height: 50px;
   letter-spacing: 1px;
-  color: #fff;
+  color: #eee;
   box-shadow: 0 0 5px rgba(0 0 0 / 30%);
   overflow: hidden;
   z-index: 2147483647;
@@ -26,17 +26,17 @@
 
 /* Color Variants */
 .ribbon.red {
-  background-color: #e43;
+  background-color: red;
 }
 
 .ribbon.green {
-  background-color: #2c7;
+  background-color: green;
 }
 
 .ribbon.blue {
-  background-color: #39d;
+  background-color: blue;
 }
 
 .ribbon.yellow {
-  background-color: #ec0;
+  background-color: yellow;
 }
