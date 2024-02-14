@@ -34,10 +34,9 @@
 - [x] Stylelint
 - [x] CSS Framework
   - [x] `globals.css`
-- [ ] Storybook
+- [x] Storybook
   - [x] Chromatic
-  - [ ] Test
-    - [ ] Coverage
+  - [x] Test
 - [x] git-cliff
 - [x] Markuplint
 - [x] Secretlint
