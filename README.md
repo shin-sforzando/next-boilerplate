@@ -35,7 +35,9 @@
 - [x] CSS Framework
   - [x] `globals.css`
 - [ ] Storybook
-  - [ ] Chromatic
+  - [x] Chromatic
+  - [ ] Test
+    - [ ] Coverage
 - [x] git-cliff
 - [x] Markuplint
 - [x] Secretlint
@@ -55,6 +57,7 @@
   - [Launch Storybook](#launch-storybook)
   - [Lint](#lint)
   - [Format](#format)
+  - [Test](#test)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -80,10 +83,12 @@ $ npm run
 Lifecycle scripts included in next-boilerplate@0.0.0:
   start
     next start
+  test
+    run-p test:*
 
 available via `npm run-script`:
   prepare
-    husky install
+    husky install && npx playwright install
   secret:hide
     git secret hide -mvF
   secret:reveal
@@ -93,6 +98,8 @@ available via `npm run-script`:
   dev
     next dev
   build
+    run-s build:*
+  build:next
     next build
   check
     run-p check:*
@@ -116,8 +123,10 @@ available via `npm run-script`:
     secretlint --maskSecrets --secretlintignore .gitignore '**/*'
   storybook
     storybook dev -p 6006
-  build-storybook
+  build:storybook
     storybook build
+  test:storybook
+    test-storybook
   chromatic
     npx chromatic
 ```
@@ -148,9 +157,13 @@ available via `npm run-script`:
 
 `npm run format` to format all.
 
+### Test
+
+`npm run test` to test all.
+
 ### Build
 
-`npm run build` to create optimized production build.
+`npm run build` to build all in sequence.
 
 ### Deploy
 
