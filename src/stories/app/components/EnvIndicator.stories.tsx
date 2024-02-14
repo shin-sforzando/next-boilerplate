@@ -5,9 +5,6 @@ import EnvIndicator from "@/app/components/EnvIndicator"
 const meta: Meta = {
   title: "app/components/EnvIndicator",
   component: EnvIndicator,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
 } satisfies Meta<typeof EnvIndicator>
 

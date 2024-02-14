@@ -11,6 +11,7 @@ const Page = async () => {
   const dummyUsers = await getDummyUsers()
   return (
     <>
+      <h1>page.tsx</h1>
       <Card align="center" bgGradient="radial(gray.300, blue.400, pink.200)">
         <CardHeader>Dummy Users</CardHeader>
         <CardBody>{JSON.stringify(dummyUsers, null, 2)}</CardBody>

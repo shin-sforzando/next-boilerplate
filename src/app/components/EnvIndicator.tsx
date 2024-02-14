@@ -1,13 +1,13 @@
-import { AbsoluteCenter, Badge, Box } from "@chakra-ui/react"
+import Ribbon from "./Ribbon.module.css"
 
 const EnvIndicator = () => {
   return (
     <>
-      <Box position="relative" h="50px">
-        <AbsoluteCenter axis="both">
-          <Badge variant="outline">{process.env.NODE_ENV}</Badge>
-        </AbsoluteCenter>
-      </Box>
+      {process.env.NODE_ENV !== "production" && (
+        <div className={`${Ribbon.ribbon} ${Ribbon.right}`}>
+          {process.env.NODE_ENV}
+        </div>
+      )}
     </>
   )
 }

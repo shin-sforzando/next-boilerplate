@@ -1,0 +1,44 @@
+.ribbon {
+  width: 200px;
+  background-color: #666;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #fff;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 5px rgba(0 0 0 / 30%);
+}
+
+/* Position Variants */
+.ribbon.left {
+  top: 25px;
+  left: -50px;
+  transform: rotate(-45deg);
+}
+
+.ribbon.right {
+  top: 25px;
+  right: -50px;
+  left: auto;
+  transform: rotate(45deg);
+}
+
+/* Color Variants */
+.ribbon.red {
+  background-color: #e43;
+}
+
+.ribbon.green {
+  background-color: #2c7;
+}
+
+.ribbon.blue {
+  background-color: #39d;
+}
+
+.ribbon.yellow {
+  background-color: #ec0;
+}

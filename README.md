@@ -41,6 +41,7 @@
 - [x] Secretlint
 - [ ] Unit Test
 - [ ] E2E Test
+  - [ ] Checkly
 
 <!-- TOC -->
 
