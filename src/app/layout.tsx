@@ -1,5 +1,4 @@
-import EnvIndicator from "@/app/components/EnvIndicator"
-import { Providers } from "@/app/providers"
+import EnvIndicator from "@/app/_components/EnvIndicator"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        {children}
         <EnvIndicator />
       </body>
     </html>

@@ -17,6 +17,15 @@
 
 **next-boilerplate** is a template repository for Next.js.
 
+## ToDo
+
+- [ ] Radix UI
+- [ ] shadcn/ui
+  - [ ] Tailwind CSS
+- [ ] TSDoc
+  - [ ] TypeDoc
+- [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
+
 ## _Use this template_
 
 - [ ] Replace the string `shin-sforzando` with the actual project owner
@@ -28,35 +37,21 @@
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
-## ToDo
-
-- [x] Rome -> Biome
-- [x] Stylelint
-- [x] CSS Framework
-  - [x] `globals.css`
-- [x] Storybook
-  - [x] Chromatic
-  - [x] Test
-- [x] git-cliff
-- [x] Markuplint
-- [x] Secretlint
-- [ ] Unit Test
-- [ ] E2E Test
-  - [ ] Checkly
-
 <!-- TOC -->
 
-- [_Use this template_](#use-this-template)
 - [ToDo](#todo)
+- [_Use this template_](#use-this-template)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
     - [Secret Files](#secret-files)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
+    - [Publish to Chromatic](#publish-to-chromatic)
   - [Lint](#lint)
   - [Format](#format)
   - [Test](#test)
+    - [via Storybook Test](#via-storybook-test)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -69,8 +64,9 @@
 ## Prerequisites
 
 - [Volta](https://volta.sh) as _JS Tool Manager_
-  - [Node.js](https://nodejs.org/) (Version 20.11.0 LTS or higher)
+  - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
+    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Test Runner_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
@@ -147,6 +143,12 @@ available via `npm run-script`:
 
 `npm run storybook` to launch Storybook on `http://0.0.0.0:6006/`.
 
+#### Publish to Chromatic
+
+Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Actions.
+
+`npm run chromatic` to deploy manually.
+
 ### Lint
 
 `npm run lint` to lint all.
@@ -158,6 +160,11 @@ available via `npm run-script`:
 ### Test
 
 `npm run test` to test all.
+
+#### via Storybook Test
+
+`npm run test:storybook` to test via Storybook.
+The Storybook server must already be running to test.
 
 ### Build
 
