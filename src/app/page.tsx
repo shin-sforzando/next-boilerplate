@@ -1,5 +1,9 @@
 const Page = () => {
-  return <>src/app/page.tsx</>
+  return (
+    <>
+      <h1>src/app/page.tsx</h1>
+    </>
+  )
 }
 
 export default Page
