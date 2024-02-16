@@ -9,6 +9,9 @@
   "markuplint.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "cSpell.words": [
     "autodocs",
     "biomejs",
@@ -17,6 +20,7 @@
     "lcov",
     "markuplint",
     "nextjs",
-    "Stylelint"
+    "Stylelint",
+    "tailwindcss"
   ]
 }
