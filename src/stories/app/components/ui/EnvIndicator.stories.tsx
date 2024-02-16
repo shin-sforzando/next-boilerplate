@@ -4,7 +4,7 @@ import EnvIndicator from "@/components/ui/EnvIndicator"
 import { expect, within } from "@storybook/test"
 
 const meta: Meta = {
-  title: "components/EnvIndicator",
+  title: "components/ui/EnvIndicator",
   component: EnvIndicator,
   tags: ["autodocs"],
 } satisfies Meta<typeof EnvIndicator>

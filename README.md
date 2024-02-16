@@ -144,6 +144,9 @@ available via `npm run-script`:
 
 `npx shadcn-ui@latest add` to add component into `src/components/ui`.
 
+Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
+In the future, it will likely be included when components are added.
+
 ### Launch Dev Server
 
 `npm run dev` to launch development server on `http://0.0.0.0:3000/`.
