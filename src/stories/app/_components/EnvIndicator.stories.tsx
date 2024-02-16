@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    const envIndicator = canvas.getByTestId("EnvIndicator")
+    const envIndicator = canvas.queryByTestId("EnvIndicator")
     if (process.env.NODE_ENV !== "production") {
       await expect(envIndicator).toBeInTheDocument()
       await expect(envIndicator).toHaveTextContent(process.env.NODE_ENV)
