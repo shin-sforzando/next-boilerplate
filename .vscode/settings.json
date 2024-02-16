@@ -22,7 +22,9 @@
     "lucide",
     "markuplint",
     "nextjs",
+    "shadcn",
     "Stylelint",
-    "tailwindcss"
+    "tailwindcss",
+    "testid"
   ]
 }

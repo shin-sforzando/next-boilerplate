@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react"
 
-import EnvIndicator from "@/app/_components/EnvIndicator"
+import EnvIndicator from "@/components/ui/EnvIndicator"
 import { expect, within } from "@storybook/test"
 
 const meta: Meta = {
-  title: "app/_components/EnvIndicator",
+  title: "components/EnvIndicator",
   component: EnvIndicator,
   tags: ["autodocs"],
 } satisfies Meta<typeof EnvIndicator>

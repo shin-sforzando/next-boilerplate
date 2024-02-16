@@ -19,9 +19,6 @@
 
 ## ToDo
 
-- [ ] Radix UI
-- [ ] shadcn/ui
-  - [ ] Tailwind CSS
 - [ ] TSDoc
   - [ ] TypeDoc
 - [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
@@ -45,6 +42,8 @@
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
     - [Secret Files](#secret-files)
+  - [Code](#code)
+    - [shadcn/ui](#shadcnui)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
     - [Publish to Chromatic](#publish-to-chromatic)
@@ -66,6 +65,8 @@
 - [Volta](https://volta.sh) as _JS Tool Manager_
   - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
+    - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
+    - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
     - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Test Runner_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
@@ -134,6 +135,14 @@ available via `npm run-script`:
 `npm run secret:hide` to hide all secret files.
 
 `npm run secret:reveal` to reveal all secret files.
+
+### Code
+
+(T. B. D.)
+
+#### shadcn/ui
+
+`npx shadcn-ui@latest add` to add component into `src/components/ui`.
 
 ### Launch Dev Server
 

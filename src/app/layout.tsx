@@ -1,5 +1,5 @@
-import EnvIndicator from "@/app/_components/EnvIndicator"
 import "@/app/globals.css"
+import EnvIndicator from "@/components/ui/EnvIndicator"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

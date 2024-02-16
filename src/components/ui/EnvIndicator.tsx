@@ -1,4 +1,4 @@
-import CornerRibbon from "./CornerRibbon.module.css"
+import CornerRibbon from "@/components/CornerRibbon.module.css"
 
 const EnvIndicator = () => {
   return (
