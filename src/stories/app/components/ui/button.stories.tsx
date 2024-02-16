@@ -6,7 +6,7 @@ import { Loader2, Mail } from "lucide-react"
  * Displays a button or a component that looks like a button.
  */
 const meta = {
-  title: "components/ui/Button",
+  title: "components/ui/button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {

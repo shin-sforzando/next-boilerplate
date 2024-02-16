@@ -1,6 +1,7 @@
 .ribbon {
   width: 200px;
   background-color: #666;
+  opacity: 0.75;
   position: fixed;
   top: 25px;
   text-align: center;
