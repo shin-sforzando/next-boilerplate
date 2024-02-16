@@ -43,7 +43,8 @@
   - [Prepare for Development](#prepare-for-development)
     - [Secret Files](#secret-files)
   - [Code](#code)
-    - [shadcn/ui](#shadcnui)
+    - [w/ shadcn/ui](#w-shadcnui)
+    - [Update Dependencies](#update-dependencies)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
     - [Publish to Chromatic](#publish-to-chromatic)
@@ -140,12 +141,18 @@ available via `npm run-script`:
 
 (T. B. D.)
 
-#### shadcn/ui
+#### w/ shadcn/ui
 
 `npx shadcn-ui@latest add` to add component into `src/components/ui`.
 
+> [!NOTE] [shadcn/ui](https://ui.shadcn.com/) depends on [Radix UI](https://www.radix-ui.com).
+
 Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
 In the future, it will likely be included when components are added.
+
+#### Update Dependencies
+
+`npx npm-check-updates` to check the latest versions of all project dependencies.
 
 ### Launch Dev Server
 
