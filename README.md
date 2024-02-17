@@ -19,8 +19,11 @@
 
 ## ToDo
 
-- [ ] TSDoc
-  - [ ] TypeDoc
+- Test
+  - [ ] Vitest
+- Documentation
+  - [ ] TSDoc
+    - [ ] TypeDoc
 - [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
 
 ## _Use this template_
