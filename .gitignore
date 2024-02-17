@@ -289,3 +289,6 @@ storybook-static/
 # End of https://www.toptal.com/developers/gitignore/api/osx,linux,windows,node,visualstudiocode,nextjs,vercel,data,storybookjs
 
 ### Project Specific ###
+# git-secret
+.gitsecret/keys/random_seed
+!*.secret

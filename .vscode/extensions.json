@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
     "editorconfig.editorconfig",
     "streetsidesoftware.code-spell-checker",
     "wayou.vscode-todo-highlight",

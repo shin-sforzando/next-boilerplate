@@ -17,6 +17,12 @@
 
 **next-boilerplate** is a template repository for Next.js.
 
+## ToDo
+
+- [ ] TSDoc
+  - [ ] TypeDoc
+- [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
+
 ## _Use this template_
 
 - [ ] Replace the string `shin-sforzando` with the actual project owner
@@ -24,33 +30,28 @@
 - [ ] Create an issue `#1` for screenshots
 - [ ] `npm install` to install dependencies
 - [ ] Check the [repository secrets](https://github.com/shin-sforzando/next-boilerplate/settings/secrets/actions)
-  - [ ] Set `xxxx` for xxxx
+  - [ ] Set `CHROMATIC_PROJECT_TOKEN` for Chromatic
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
-## ToDo
-
-- [x] Rome -> Biome
-- [x] Stylelint
-- [x] CSS Framework
-  - [x] `globals.css`
-- [ ] Storybook
-- [x] git-cliff
-- [x] Markuplint
-- [x] Secretlint
-- [ ] Unit Test
-- [ ] E2E Test
-
 <!-- TOC -->
 
-- [_Use this template_](#use-this-template)
 - [ToDo](#todo)
+- [_Use this template_](#use-this-template)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
+    - [Secret Files](#secret-files)
+  - [Code](#code)
+    - [w/ shadcn/ui](#w-shadcnui)
+    - [Update Dependencies](#update-dependencies)
   - [Launch Dev Server](#launch-dev-server)
+  - [Launch Storybook](#launch-storybook)
+    - [Publish to Chromatic](#publish-to-chromatic)
   - [Lint](#lint)
   - [Format](#format)
+  - [Test](#test)
+    - [via Storybook Test](#via-storybook-test)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -63,9 +64,13 @@
 ## Prerequisites
 
 - [Volta](https://volta.sh) as _JS Tool Manager_
-  - [Node.js](https://nodejs.org/) (Version 20.11.0 LTS or higher)
+  - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
+    - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
+    - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
+    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Test Runner_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
+    - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
 - [direnv](https://direnv.net/) as _`.env` Loader_
 
@@ -76,10 +81,16 @@ $ npm run
 Lifecycle scripts included in next-boilerplate@0.0.0:
   start
     next start
+  test
+    run-p test:*
 
 available via `npm run-script`:
   prepare
-    husky install
+    husky
+  secret:hide
+    git secret hide -mvF
+  secret:reveal
+    git secret reveal -vf
   reinstall
     node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})' && npm install
   dev
@@ -106,15 +117,56 @@ available via `npm run-script`:
     stylelint --fix 'src/**/*.{css,scss,less}'
   lint:secret
     secretlint --maskSecrets --secretlintignore .gitignore '**/*'
+  storybook
+    storybook dev -p 6006
+  build-storybook
+    storybook build
+  test:storybook
+    test-storybook
+  chromatic
+    npx chromatic
 ```
 
 ### Prepare for Development
 
 `npm install` to install dependencies.
 
+#### Secret Files
+
+`npm run secret:hide` to hide all secret files.
+
+`npm run secret:reveal` to reveal all secret files.
+
+### Code
+
+(T. B. D.)
+
+#### w/ shadcn/ui
+
+`npx shadcn-ui@latest add` to add component into `src/components/ui`.
+
+> [!NOTE] [shadcn/ui](https://ui.shadcn.com/) depends on [Radix UI](https://www.radix-ui.com).
+
+Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
+In the future, it will likely be included when components are added.
+
+#### Update Dependencies
+
+`npx npm-check-updates` to check the latest versions of all project dependencies.
+
 ### Launch Dev Server
 
-`npm run dev` to launch development server.
+`npm run dev` to launch development server on `http://0.0.0.0:3000/`.
+
+### Launch Storybook
+
+`npm run storybook` to launch Storybook on `http://0.0.0.0:6006/`.
+
+#### Publish to Chromatic
+
+Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Actions.
+
+`npm run chromatic` to deploy manually.
 
 ### Lint
 
@@ -123,6 +175,15 @@ available via `npm run-script`:
 ### Format
 
 `npm run format` to format all.
+
+### Test
+
+`npm run test` to test all.
+
+#### via Storybook Test
+
+`npm run test:storybook` to test via Storybook.
+The Storybook server must already be running to test.
 
 ### Build
 

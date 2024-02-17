@@ -12,6 +12,8 @@ reviews:
   path_instructions:
     - path: "README.md"
       instructions: "Review the document for adequacy as an overview of this system."
+    - path: "*.stories.ts"
+      instructions: "Review the storybook stories for completeness and correctness."
   auto_review:
     enabled: true
     ignore_title_keywords:
