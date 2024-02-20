@@ -46,13 +46,14 @@
   - [Code](#code)
     - [w/ shadcn/ui](#w-shadcnui)
     - [Update Dependencies](#update-dependencies)
+  - [Test](#test)
+    - [Unit \& Integration Tests w/ Vitest](#unit--integration-tests-w-vitest)
+    - [E2E Tests w/ Storybook](#e2e-tests-w-storybook)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
     - [Publish to Chromatic](#publish-to-chromatic)
   - [Lint](#lint)
   - [Format](#format)
-  - [Test](#test)
-    - [w/ Storybook](#w-storybook)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -69,7 +70,8 @@
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
     - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
-    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Test Runner_
+    - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
+    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
@@ -82,6 +84,8 @@ $ npm run
 Lifecycle scripts included in next-boilerplate@0.0.0:
   start
     next start
+  test
+    vitest --coverage
 
 available via `npm run-script`:
   prepare
@@ -121,7 +125,7 @@ available via `npm run-script`:
   build-storybook
     storybook build
   test-storybook
-    test-storybook --coverage
+    test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook
   chromatic
     npx chromatic
 ```
@@ -138,8 +142,6 @@ available via `npm run-script`:
 
 ### Code
 
-(T. B. D.)
-
 #### w/ shadcn/ui
 
 `npx shadcn-ui@latest add` to add component into `src/components/ui`.
@@ -152,6 +154,28 @@ In the future, it will likely be included when components are added.
 #### Update Dependencies
 
 `npx npm-check-updates` to check the latest versions of all project dependencies.
+
+### Test
+
+The testing policy of this templates is to use Vitest for unit & integration tests and Storybook for E2E tests.
+All implementations related to logic should be unit tested, and all implementations related to look and feel should be E2E tested.
+
+#### Unit & Integration Tests w/ Vitest
+
+`npm run test` to execute unit & integration test via Vitest.
+
+See [./src/lib/utils.ts](./src/lib/utils.ts) for an example test description.
+
+Coverage reports will be exported to `coverage`.
+
+#### E2E Tests w/ Storybook
+
+`npm run test-storybook` to execute interaction test via Storybook.
+
+See [./src/stories/app/page.stories.tsx](./src/stories/app/page.stories.tsx) for an example test description.
+
+Storybook must be activated before running the test.
+Coverage reports will be exported to `coverage/storybook`.
 
 ### Launch Dev Server
 
@@ -174,15 +198,6 @@ Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Act
 ### Format
 
 `npm run format` to format all.
-
-### Test
-
-#### w/ Storybook
-
-`npm run test-storybook` to execute interaction test via Storybook.
-
-Storybook must be activated before running the test.
-Coverage reports will be exported to `coverage/storybook`.
 
 ### Build
 
