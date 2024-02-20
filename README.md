@@ -19,8 +19,6 @@
 
 ## ToDo
 
-- Test
-  - [ ] Vitest
 - Documentation
   - [ ] TSDoc
     - [ ] TypeDoc
@@ -54,7 +52,7 @@
   - [Lint](#lint)
   - [Format](#format)
   - [Test](#test)
-    - [via Storybook Test](#via-storybook-test)
+    - [w/ Storybook](#w-storybook)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -84,8 +82,6 @@ $ npm run
 Lifecycle scripts included in next-boilerplate@0.0.0:
   start
     next start
-  test
-    run-p test:*
 
 available via `npm run-script`:
   prepare
@@ -124,8 +120,8 @@ available via `npm run-script`:
     storybook dev -p 6006
   build-storybook
     storybook build
-  test:storybook
-    test-storybook
+  test-storybook
+    test-storybook --coverage
   chromatic
     npx chromatic
 ```
@@ -181,12 +177,12 @@ Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Act
 
 ### Test
 
-`npm run test` to test all.
+#### w/ Storybook
 
-#### via Storybook Test
+`npm run test-storybook` to execute interaction test via Storybook.
 
-`npm run test:storybook` to test via Storybook.
-The Storybook server must already be running to test.
+Storybook must be activated before running the test.
+Coverage reports will be exported to `coverage/storybook`.
 
 ### Build
 
