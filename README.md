@@ -42,19 +42,19 @@
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
+    - [Update Dependencies](#update-dependencies)
     - [Secret Files](#secret-files)
   - [Code](#code)
     - [w/ shadcn/ui](#w-shadcnui)
-    - [Update Dependencies](#update-dependencies)
+    - [Lint](#lint)
+    - [Format](#format)
+  - [Launch Dev Server](#launch-dev-server)
+  - [Launch Storybook](#launch-storybook)
+    - [Publish to Chromatic](#publish-to-chromatic)
   - [Test](#test)
     - [Unit \& Integration Tests w/ Vitest](#unit--integration-tests-w-vitest)
     - [E2E Tests w/ Storybook](#e2e-tests-w-storybook)
   - [Documentation](#documentation)
-  - [Launch Dev Server](#launch-dev-server)
-  - [Launch Storybook](#launch-storybook)
-    - [Publish to Chromatic](#publish-to-chromatic)
-  - [Lint](#lint)
-  - [Format](#format)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
@@ -139,6 +139,10 @@ available via `npm run-script`:
 
 `npm install` to install dependencies.
 
+#### Update Dependencies
+
+`npx npm-check-updates` to check the latest versions of all project dependencies.
+
 #### Secret Files
 
 `npm run secret:hide` to hide all secret files.
@@ -156,9 +160,27 @@ available via `npm run-script`:
 Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
 In the future, it will likely be included when components are added.
 
-#### Update Dependencies
+#### Lint
 
-`npx npm-check-updates` to check the latest versions of all project dependencies.
+`npm run lint` to lint all.
+
+#### Format
+
+`npm run format` to format all.
+
+### Launch Dev Server
+
+`npm run dev` to launch development server on `http://0.0.0.0:3000/`.
+
+### Launch Storybook
+
+`npm run storybook` to launch Storybook on `http://0.0.0.0:6006/`.
+
+#### Publish to Chromatic
+
+Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Actions.
+
+`npm run chromatic` to deploy manually.
 
 ### Test
 
@@ -185,28 +207,6 @@ Coverage reports will be exported to `coverage/storybook`.
 ### Documentation
 
 `npm run doc` to generate documents based on [Doc Comments](https://typedoc.org/guides/doccomments/).
-
-### Launch Dev Server
-
-`npm run dev` to launch development server on `http://0.0.0.0:3000/`.
-
-### Launch Storybook
-
-`npm run storybook` to launch Storybook on `http://0.0.0.0:6006/`.
-
-#### Publish to Chromatic
-
-Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Actions.
-
-`npm run chromatic` to deploy manually.
-
-### Lint
-
-`npm run lint` to lint all.
-
-### Format
-
-`npm run format` to format all.
 
 ### Build
 
