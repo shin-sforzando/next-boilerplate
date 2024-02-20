@@ -20,6 +20,9 @@
 ## ToDo
 
 - [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
+  - [ ] Web Analytics
+  - [ ] Speed Insights
+  - [ ] Logging
 
 ## _Use this template_
 
@@ -57,6 +60,7 @@
   - [Documenting](#documenting)
     - [CHANGELOG](#changelog)
 - [Misc](#misc)
+  - [CodeRabbit](#coderabbit)
 - [Notes](#notes)
   - [LICENSE](#license)
   - [Contributors](#contributors)
@@ -227,6 +231,11 @@ git push origin --tags
 > `$(VERSION)` must be in accordance with [semver](https://semver.org) like `vX.Y.Z`.
 
 ## Misc
+
+### CodeRabbit
+
+This repository integrates with CodeRabbit, an AI code review service.
+The configurations can be found in `.coderabbit.yaml`.
 
 ## Notes
 

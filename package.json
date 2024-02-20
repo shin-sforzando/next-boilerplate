@@ -25,7 +25,7 @@
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
     "chromatic": "npx chromatic",
-    "doc": "typedoc"
+    "doc": "typedoc --out docs"
   },
   "lint-staged": {
     "*.{html,tsx}": [
@@ -33,7 +33,9 @@
     ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --apply",
-      "vitest run",
+      "vitest run --passWithNoTests"
+    ],
+    "src/**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "typedoc"
     ],
     "src/**/*.{css,scss,less}": [
