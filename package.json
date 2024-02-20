@@ -24,7 +24,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "doc": "typedoc"
   },
   "lint-staged": {
     "*.{html,tsx}": [
@@ -32,9 +33,10 @@
     ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
       "biome check --apply",
-      "vitest run"
+      "vitest run",
+      "typedoc"
     ],
-    "*.{css,scss,less}": [
+    "src/**/*.{css,scss,less}": [
       "stylelint --fix"
     ]
   },
@@ -90,6 +92,7 @@
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.4.1",
+    "typedoc": "^0.25.8",
     "typescript": "^5",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.3.0"

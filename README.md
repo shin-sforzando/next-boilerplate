@@ -19,9 +19,6 @@
 
 ## ToDo
 
-- Documentation
-  - [ ] TSDoc
-    - [ ] TypeDoc
 - [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
 
 ## _Use this template_
@@ -49,6 +46,7 @@
   - [Test](#test)
     - [Unit \& Integration Tests w/ Vitest](#unit--integration-tests-w-vitest)
     - [E2E Tests w/ Storybook](#e2e-tests-w-storybook)
+  - [Documentation](#documentation)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
     - [Publish to Chromatic](#publish-to-chromatic)
@@ -72,6 +70,7 @@
     - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
     - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
     - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
+    - [TypeDoc](https://typedoc.org/) as _TypeScript Document Generator_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
@@ -128,6 +127,8 @@ available via `npm run-script`:
     test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook
   chromatic
     npx chromatic
+  doc
+    typedoc
 ```
 
 ### Prepare for Development
@@ -176,6 +177,10 @@ See [./src/stories/app/page.stories.tsx](./src/stories/app/page.stories.tsx) for
 
 Storybook must be activated before running the test.
 Coverage reports will be exported to `coverage/storybook`.
+
+### Documentation
+
+`npm run doc` to generate documents based on [Doc Comments](https://typedoc.org/guides/doccomments/).
 
 ### Launch Dev Server
 
