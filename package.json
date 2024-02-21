@@ -25,7 +25,7 @@
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
     "chromatic": "npx chromatic",
-    "doc": "typedoc --out docs"
+    "doc": "typedoc"
   },
   "lint-staged": {
     "*.{html,tsx}": [
@@ -54,6 +54,7 @@
     "clsx": "^2.1.0",
     "lucide-react": "^0.335.0",
     "next": "14.1.0",
+    "next-axiom": "^1.1.1",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",

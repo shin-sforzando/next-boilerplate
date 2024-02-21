@@ -17,13 +17,6 @@
 
 **next-boilerplate** is a template repository for Next.js.
 
-## ToDo
-
-- [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
-  - [ ] Web Analytics
-  - [ ] Speed Insights
-  - [ ] Logging
-
 ## _Use this template_
 
 - [ ] Replace the string `shin-sforzando` with the actual project owner
@@ -37,7 +30,6 @@
 
 <!-- TOC -->
 
-- [ToDo](#todo)
 - [_Use this template_](#use-this-template)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
@@ -45,6 +37,9 @@
     - [Update Dependencies](#update-dependencies)
     - [Secret Files](#secret-files)
   - [Code](#code)
+    - [Logging w/ Axiom](#logging-w-axiom)
+      - [Client Components](#client-components)
+      - [Server Components](#server-components)
     - [w/ shadcn/ui](#w-shadcnui)
     - [Lint](#lint)
     - [Format](#format)
@@ -71,6 +66,7 @@
   - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
+    - [Axiom](https://axiom.co/) as _Logging Service_
     - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
     - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
     - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
@@ -150,6 +146,35 @@ available via `npm run-script`:
 `npm run secret:reveal` to reveal all secret files.
 
 ### Code
+
+#### Logging w/ Axiom
+
+##### Client Components
+
+```typescript
+"use client";
+import { useLogger } from "next-axiom";
+
+export default function ClientComponent() {
+  const log = useLogger();
+  log.debug("User logged in", { userId: 42 });
+  return <h1>Logged in</h1>;
+}
+```
+
+##### Server Components
+
+```typescript
+import { Logger } from "next-axiom";
+
+export default async function ServerComponent() {
+  const log = new Logger();
+  log.info("User logged in", { userId: 42 });
+  // ...
+  await log.flush();
+  return <h1>Logged in</h1>;
+}
+```
 
 #### w/ shadcn/ui
 
