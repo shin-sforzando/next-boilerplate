@@ -3,6 +3,7 @@ import "@/app/globals.css"
 import EnvIndicator from "@/components/ui/EnvIndicator"
 import ModeToggle from "@/components/ui/ModeToggle"
 import { ThemeProvider } from "@/providers/ThemeProvider"
+import { Analytics } from "@vercel/analytics/react"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
         >
           {children}
           <ModeToggle />
+          <Analytics />
           <EnvIndicator />
         </ThemeProvider>
       </body>
