@@ -8,7 +8,9 @@ reviews:
   collapse_walkthrough: false
   path_filters:
     - "!**/.github/**"
+    - "!**/.gitsecret/**"
     - "!**/.vscode/**"
+    - "!**/doc/**"
   path_instructions:
     - path: "README.md"
       instructions: "Review the document for adequacy as an overview of this system."

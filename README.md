@@ -17,12 +17,6 @@
 
 **next-boilerplate** is a template repository for Next.js.
 
-## ToDo
-
-- [ ] TSDoc
-  - [ ] TypeDoc
-- [ ] [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)
-
 ## _Use this template_
 
 - [ ] Replace the string `shin-sforzando` with the actual project owner
@@ -36,27 +30,32 @@
 
 <!-- TOC -->
 
-- [ToDo](#todo)
 - [_Use this template_](#use-this-template)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
+    - [Update Dependencies](#update-dependencies)
     - [Secret Files](#secret-files)
   - [Code](#code)
+    - [Logging w/ Axiom](#logging-w-axiom)
+      - [Client Components](#client-components)
+      - [Server Components](#server-components)
     - [w/ shadcn/ui](#w-shadcnui)
-    - [Update Dependencies](#update-dependencies)
+    - [Lint](#lint)
+    - [Format](#format)
   - [Launch Dev Server](#launch-dev-server)
   - [Launch Storybook](#launch-storybook)
     - [Publish to Chromatic](#publish-to-chromatic)
-  - [Lint](#lint)
-  - [Format](#format)
   - [Test](#test)
-    - [via Storybook Test](#via-storybook-test)
+    - [Unit \& Integration Tests w/ Vitest](#unit--integration-tests-w-vitest)
+    - [E2E Tests w/ Storybook](#e2e-tests-w-storybook)
+  - [Documentation](#documentation)
   - [Build](#build)
   - [Deploy](#deploy)
   - [Documenting](#documenting)
     - [CHANGELOG](#changelog)
 - [Misc](#misc)
+  - [CodeRabbit](#coderabbit)
 - [Notes](#notes)
   - [LICENSE](#license)
   - [Contributors](#contributors)
@@ -67,8 +66,11 @@
   - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
+    - [Axiom](https://axiom.co/) as _Logging Service_
     - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
-    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Test Runner_
+    - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
+    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
+    - [TypeDoc](https://typedoc.org/) as _TypeScript Document Generator_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
 - [git-secret](https://git-secret.io/) as _Secret File Manager_
@@ -82,7 +84,7 @@ Lifecycle scripts included in next-boilerplate@0.0.0:
   start
     next start
   test
-    run-p test:*
+    vitest --coverage
 
 available via `npm run-script`:
   prepare
@@ -121,15 +123,21 @@ available via `npm run-script`:
     storybook dev -p 6006
   build-storybook
     storybook build
-  test:storybook
-    test-storybook
+  test-storybook
+    test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook
   chromatic
     npx chromatic
+  doc
+    typedoc
 ```
 
 ### Prepare for Development
 
 `npm install` to install dependencies.
+
+#### Update Dependencies
+
+`npx npm-check-updates` to check the latest versions of all project dependencies.
 
 #### Secret Files
 
@@ -139,7 +147,34 @@ available via `npm run-script`:
 
 ### Code
 
-(T. B. D.)
+#### Logging w/ Axiom
+
+##### Client Components
+
+```typescript
+"use client";
+import { useLogger } from "next-axiom";
+
+export default function ClientComponent() {
+  const log = useLogger();
+  log.debug("User logged in", { userId: 42 });
+  return <h1>Logged in</h1>;
+}
+```
+
+##### Server Components
+
+```typescript
+import { Logger } from "next-axiom";
+
+export default async function ServerComponent() {
+  const log = new Logger();
+  log.info("User logged in", { userId: 42 });
+  // ...
+  await log.flush();
+  return <h1>Logged in</h1>;
+}
+```
 
 #### w/ shadcn/ui
 
@@ -150,9 +185,13 @@ available via `npm run-script`:
 Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
 In the future, it will likely be included when components are added.
 
-#### Update Dependencies
+#### Lint
 
-`npx npm-check-updates` to check the latest versions of all project dependencies.
+`npm run lint` to lint all.
+
+#### Format
+
+`npm run format` to format all.
 
 ### Launch Dev Server
 
@@ -168,22 +207,31 @@ Automatically deployed to [Chromatic](https://www.chromatic.com/) via GitHub Act
 
 `npm run chromatic` to deploy manually.
 
-### Lint
-
-`npm run lint` to lint all.
-
-### Format
-
-`npm run format` to format all.
-
 ### Test
 
-`npm run test` to test all.
+The testing policy of this templates is to use Vitest for unit & integration tests and Storybook for E2E tests.
+All implementations related to logic should be unit tested, and all implementations related to look and feel should be E2E tested.
 
-#### via Storybook Test
+#### Unit & Integration Tests w/ Vitest
 
-`npm run test:storybook` to test via Storybook.
-The Storybook server must already be running to test.
+`npm run test` to execute unit & integration test via Vitest.
+
+See [./src/lib/utils.ts](./src/lib/utils.ts) for an example test description.
+
+Coverage reports will be exported to `coverage`.
+
+#### E2E Tests w/ Storybook
+
+`npm run test-storybook` to execute interaction test via Storybook.
+
+See [./src/stories/app/page.stories.tsx](./src/stories/app/page.stories.tsx) for an example test description.
+
+Storybook must be activated before running the test.
+Coverage reports will be exported to `coverage/storybook`.
+
+### Documentation
+
+`npm run doc` to generate documents based on [Doc Comments](https://typedoc.org/guides/doccomments/).
 
 ### Build
 
@@ -208,6 +256,11 @@ git push origin --tags
 > `$(VERSION)` must be in accordance with [semver](https://semver.org) like `vX.Y.Z`.
 
 ## Misc
+
+### CodeRabbit
+
+This repository integrates with CodeRabbit, an AI code review service.
+The configurations can be found in `.coderabbit.yaml`.
 
 ## Notes
 

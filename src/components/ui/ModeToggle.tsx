@@ -11,9 +11,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Logger } from "next-axiom"
 
 export default function ModeToggle() {
+  const logger = new Logger()
   const { setTheme } = useTheme()
+  logger.debug("ModeToggle rendered")
 
   return (
     <DropdownMenu>

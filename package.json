@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "vitest --coverage",
     "check": "run-p check:*",
     "lint": "run-p lint:*",
     "format": "run-p format:*",
@@ -22,32 +23,38 @@
     "lint:secret": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "run-p test:*",
-    "test:storybook": "test-storybook",
-    "chromatic": "npx chromatic"
+    "test-storybook": "test-storybook --coverage && npx nyc report --reporter=lcov -t coverage/storybook --report-dir coverage/storybook",
+    "chromatic": "npx chromatic",
+    "doc": "typedoc"
   },
   "lint-staged": {
     "*.{html,tsx}": [
       "markuplint"
     ],
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome check --apply"
+      "biome check --apply --no-errors-on-unmatched",
+      "vitest run --passWithNoTests"
     ],
-    "*.{css,scss,less}": [
+    "src/**/*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "typedoc"
+    ],
+    "src/**/*.{css,scss,less}": [
       "stylelint --fix"
     ]
   },
   "volta": {
-    "node": "21.6.1",
+    "node": "21.6.2",
     "npm": "10.2.4"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
+    "@vercel/analytics": "^1.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "lucide-react": "^0.331.0",
+    "lucide-react": "^0.335.0",
     "next": "14.1.0",
+    "next-axiom": "^1.1.1",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
@@ -56,34 +63,42 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
-    "@markuplint/jsx-parser": "^4.1.0",
-    "@markuplint/react-spec": "^4.0.1",
-    "@secretlint/secretlint-rule-preset-recommend": "^8.1.1",
-    "@storybook/addon-a11y": "^7.6.16",
-    "@storybook/addon-essentials": "^7.6.16",
-    "@storybook/addon-interactions": "^7.6.16",
-    "@storybook/addon-links": "^7.6.16",
-    "@storybook/blocks": "^7.6.16",
-    "@storybook/nextjs": "^7.6.16",
-    "@storybook/react": "^7.6.16",
-    "@storybook/test": "^7.6.16",
+    "@markuplint/jsx-parser": "^4.1.1",
+    "@markuplint/react-spec": "^4.0.2",
+    "@secretlint/secretlint-rule-preset-recommend": "^8.1.2",
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-coverage": "^1.0.0",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/nextjs": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/test": "^7.6.17",
     "@storybook/test-runner": "^0.16.0",
+    "@testing-library/react": "^14.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-istanbul": "^1.3.1",
     "autoprefixer": "^10.4.17",
-    "chromatic": "^10.9.5",
-    "git-cliff": "^1.4.0",
+    "chromatic": "^10.9.6",
+    "git-cliff": "^2.0.3",
     "husky": "^9.0.11",
+    "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
-    "markuplint": "^4.1.0",
+    "markuplint": "^4.1.1",
     "npm-run-all2": "^6.1.2",
     "postcss": "^8.4.35",
-    "secretlint": "^8.1.1",
-    "storybook": "^7.6.16",
+    "secretlint": "^8.1.2",
+    "storybook": "^7.6.17",
     "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typedoc": "^0.25.8",
+    "typescript": "^5",
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^1.3.1"
   }
 }
