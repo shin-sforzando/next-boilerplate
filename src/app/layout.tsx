@@ -1,8 +1,4 @@
-import "@/app/globals.css"
-
 import EnvIndicator from "@/components/ui/EnvIndicator"
-import ModeToggle from "@/components/ui/ModeToggle"
-import { ThemeProvider } from "@/providers/ThemeProvider"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { AxiomWebVitals } from "next-axiom"
@@ -18,19 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
         <AxiomWebVitals />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <ModeToggle />
-          <EnvIndicator />
-        </ThemeProvider>
+        {children}
+        <EnvIndicator />
         <Analytics />
       </body>
     </html>

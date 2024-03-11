@@ -1,4 +1,4 @@
-import path from "path"
+import path from "node:path"
 import type { StorybookConfig } from "@storybook/nextjs"
 
 const config: StorybookConfig = {

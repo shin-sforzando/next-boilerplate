@@ -28,9 +28,15 @@
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
+## ToDo
+
+- [ ] Implement `src/app/loading.tsx`
+- [ ] Upgrade Storybook to v8(RC)
+
 <!-- TOC -->
 
 - [_Use this template_](#use-this-template)
+- [ToDo](#todo)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
@@ -40,7 +46,6 @@
     - [Logging w/ Axiom](#logging-w-axiom)
       - [Client Components](#client-components)
       - [Server Components](#server-components)
-    - [w/ shadcn/ui](#w-shadcnui)
     - [Lint](#lint)
     - [Format](#format)
   - [Launch Dev Server](#launch-dev-server)
@@ -65,9 +70,7 @@
 - [Volta](https://volta.sh) as _JS Tool Manager_
   - [Node.js](https://nodejs.org/) (Version 21 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
-    - [Tailwind CSS](https://tailwindcss.com/) (Version 3.4.1)
     - [Axiom](https://axiom.co/) as _Logging Service_
-    - [shadcn/ui](https://ui.shadcn.com/) (Version 0.8.0)
     - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
     - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
     - [TypeDoc](https://typedoc.org/) as _TypeScript Document Generator_
@@ -153,6 +156,7 @@ available via `npm run-script`:
 
 ```typescript
 "use client";
+
 import { useLogger } from "next-axiom";
 
 export default function ClientComponent() {
@@ -175,15 +179,6 @@ export default async function ServerComponent() {
   return <h1>Logged in</h1>;
 }
 ```
-
-#### w/ shadcn/ui
-
-`npx shadcn-ui@latest add` to add component into `src/components/ui`.
-
-> [!NOTE] [shadcn/ui](https://ui.shadcn.com/) depends on [Radix UI](https://www.radix-ui.com).
-
-Storybook templates can be obtained from [GitHub](https://github.com/shadcn-ui/ui/pull/1561/files).
-In the future, it will likely be included when components are added.
 
 #### Lint
 
