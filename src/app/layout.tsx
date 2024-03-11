@@ -4,7 +4,7 @@ import EnvIndicator from "@/components/ui/EnvIndicator"
 import ModeToggle from "@/components/ui/ModeToggle"
 import { ThemeProvider } from "@/providers/ThemeProvider"
 import { Analytics } from "@vercel/analytics/react"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { AxiomWebVitals } from "next-axiom"
 
 export const metadata: Metadata = {
