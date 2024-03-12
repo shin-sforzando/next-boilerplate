@@ -28,15 +28,9 @@
 - [ ] Integrate with Slack: `/github subscribe shin-sforzando/next-boilerplate reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
-## ToDo
-
-- [ ] Implement `src/app/loading.tsx`
-- [x] Upgrade Storybook to v8(RC)
-
 <!-- TOC -->
 
 - [_Use this template_](#use-this-template)
-- [ToDo](#todo)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Prepare for Development](#prepare-for-development)
