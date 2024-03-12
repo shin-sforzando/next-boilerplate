@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body>
         <AxiomWebVitals />
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
         <EnvIndicator />
         <Analytics />
       </body>
