@@ -31,7 +31,7 @@
 ## ToDo
 
 - [ ] Implement `src/app/loading.tsx`
-- [ ] Upgrade Storybook to v8(RC)
+- [x] Upgrade Storybook to v8(RC)
 
 <!-- TOC -->
 
