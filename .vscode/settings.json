@@ -17,9 +17,13 @@
     "direnv",
     "gitsecret",
     "lcov",
+    "mantine",
     "markuplint",
     "nextjs",
     "Stylelint",
     "testid"
-  ]
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

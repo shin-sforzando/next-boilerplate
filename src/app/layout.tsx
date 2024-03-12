@@ -1,4 +1,7 @@
+import "@mantine/core/styles.css"
+
 import EnvIndicator from "@/components/ui/EnvIndicator"
+import { ColorSchemeScript, MantineProvider } from "@mantine/core"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { AxiomWebVitals } from "next-axiom"
@@ -15,9 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
         <AxiomWebVitals />
-        {children}
+        <MantineProvider>{children}</MantineProvider>
         <EnvIndicator />
         <Analytics />
       </body>
