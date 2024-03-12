@@ -12,7 +12,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,6 +32,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Publish to Chromatic
         uses: chromaui/action@latest
         with:
