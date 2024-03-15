@@ -9,24 +9,21 @@
   "markuplint.enable": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
   "cSpell.words": [
     "autodocs",
     "biomejs",
     "Checkly",
-    "clsx",
     "Coderabbit",
     "direnv",
     "gitsecret",
     "lcov",
-    "lucide",
+    "mantine",
     "markuplint",
     "nextjs",
-    "shadcn",
     "Stylelint",
-    "tailwindcss",
     "testid"
-  ]
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

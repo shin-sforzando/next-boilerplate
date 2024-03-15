@@ -1,11 +1,9 @@
-import { Loader } from "lucide-react"
+import { Center, Loader } from "@mantine/core"
 
-const Loading = () => {
+export default function Loading() {
   return (
-    <>
-      <Loader className="w-12 h-12 mx-auto animate-spin" />
-    </>
+    <Center>
+      <Loader />
+    </Center>
   )
 }
-
-export default Loading

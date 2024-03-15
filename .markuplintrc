@@ -5,10 +5,18 @@
   "parser": {
     "\\.[jt]sx?$": "@markuplint/jsx-parser"
   },
-  "extends": [
-    "markuplint:recommended-react"
-  ],
-  "excludeFiles": [
-    "doc/**/*"
-  ]
+  "extends": ["markuplint:recommended-react"],
+  "excludeFiles": ["doc/**/*"],
+  "overrides": {
+    "**/*.[jt]sx": {
+      "rules": {
+        "permitted-contents": [
+          {
+            "tag": "head",
+            "contents": [{ "optional": "title" }, { "optional": "meta" }]
+          }
+        ]
+      }
+    }
+  }
 }

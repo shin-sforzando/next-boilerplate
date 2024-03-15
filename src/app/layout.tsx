@@ -1,10 +1,9 @@
-import "@/app/globals.css"
+import "@mantine/core/styles.css"
 
 import EnvIndicator from "@/components/ui/EnvIndicator"
-import ModeToggle from "@/components/ui/ModeToggle"
-import { ThemeProvider } from "@/providers/ThemeProvider"
+import { ColorSchemeScript, MantineProvider } from "@mantine/core"
 import { Analytics } from "@vercel/analytics/react"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { AxiomWebVitals } from "next-axiom"
 
 export const metadata: Metadata = {
@@ -18,19 +17,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
         <AxiomWebVitals />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <ModeToggle />
-          <EnvIndicator />
-        </ThemeProvider>
+        <MantineProvider>{children}</MantineProvider>
+        <EnvIndicator />
         <Analytics />
       </body>
     </html>

@@ -1,4 +1,4 @@
-import path from "path"
+import path from "node:path"
 import type { StorybookConfig } from "@storybook/nextjs"
 
 const config: StorybookConfig = {
@@ -12,6 +12,7 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "@storybook/addon-coverage",
+    "@storybook/addon-styling-webpack",
   ],
   framework: {
     name: "@storybook/nextjs",
