@@ -39,5 +39,7 @@ jobs:
           onlyChanged: true
           exitZeroOnChanges: true
           autoAcceptChanges: "main"
-          skip: "dependabot/**"
+          skip: "@(renovate/**|dependabot/**)"
           zip: true
+        env:
+          LOG_LEVEL: "debug"
