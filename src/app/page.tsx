@@ -1,10 +1,10 @@
-import { Container } from "@mantine/core"
+import { Container, Title } from "@mantine/core"
 
 const Page = () => {
   return (
     <>
       <Container>
-        <h1>src/app/page.tsx</h1>
+        <Title order={1}>src/app/page.tsx</Title>
       </Container>
     </>
   )

@@ -62,12 +62,12 @@
 ## Prerequisites
 
 - [Volta](https://volta.sh) as _JS Tool Manager_
-  - [Node.js](https://nodejs.org/) (Version 21 or higher)
+  - [Node.js](https://nodejs.org/) (Version 23 or higher)
     - [Next.js](https://nextjs.org/) (Version 14 or higher)
     - [Mantine](https://mantine.dev/) (Version 7.6 or higher)
     - [Axiom](https://axiom.co/) as _Logging Service_
     - [Vitest](https://vitest.dev/) as _Unit & Integration Test Framework_
-    - [Storybook](https://storybook.js.org/) (Version 7.6) as _UI Catalogue and Interaction Test Framework_
+    - [Storybook](https://storybook.js.org/) (Version 8.3) as _UI Catalogue and Interaction Test Framework_
     - [TypeDoc](https://typedoc.org/) as _TypeScript Document Generator_
     - [Biome](https://biomejs.dev/) as _Script Linter and Formatter_
     - [Husky](https://typicode.github.io/husky/) as _Git Hooks Manager_
